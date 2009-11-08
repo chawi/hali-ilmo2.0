@@ -29,3 +29,23 @@ Migrating to CreateCourses (20091108200210)
   [4;35;1mCourse Create (1.1ms)[0m   [0mINSERT INTO "courses" ("name", "created_at", "updated_at", "description") VALUES('TikRa', '2009-11-08 20:16:26', '2009-11-08 20:16:26', 'Mahtava kurssi!')[0m
   [4;36;1mCourse Create (0.7ms)[0m   [0;1mINSERT INTO "courses" ("name", "created_at", "updated_at", "description") VALUES('Rails', '2009-11-08 20:16:28', '2009-11-08 20:16:28', 'Ai jee jee kurssi.')[0m
   [4;35;1mCourse Load (1.1ms)[0m   [0mSELECT * FROM "courses" [0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-08 22:26:45) [GET]
+  [4;36;1mCourse Load (1.7ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering courses/index
+Completed in 48ms (View: 28, DB: 2) | 200 OK [http://localhost/courses/index]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-08 22:44:51) [GET]
+  [4;35;1mCourse Load (1.5ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 55ms (View: 39, DB: 1) | 200 OK [http://localhost/courses/index]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-08 22:44:54) [GET]
+  [4;36;1mCourse Load (1.5ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 25ms (View: 8, DB: 1) | 200 OK [http://localhost/courses/index]

@@ -1,9 +1,6 @@
-<h1>Parempi Ilmo 2.0</h1>
-
-<p>Tässä sulle kurssia</p>
-
-<% @courses.each do |course| %>
 <ul>
+	<% @courses.each do |course| %>
 	<li><%= course.name %></li>
+	<% end %>
 </ul>
-<% end %>
+
