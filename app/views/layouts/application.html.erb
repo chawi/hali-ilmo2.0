@@ -1,16 +1,26 @@
 <html>
 	<head>
-
+		<%= stylesheet_link_tag "courses" %>
 	</head>
 
 	<body>
+		<div class="courses_wrap">
 
-		<h1>Parempi Ilmo 2.0</h1>
+			<h1>Parempi Ilmo 2.0</h1>
 
-		<p>Tässä sulle kurssia</p>
+			<hr />
 
-		<%= yield %>
+			<p>Tässä sulle kurssia</p>
 
+			<%= yield %>
+		</div>
+
+		<div class="footer">
+			Sivu luotiin <%= Time.now.to_s(:default) %>
+
+			
+
+		</div>
 	</body>
 
 </html>
