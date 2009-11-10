@@ -1,5 +1,9 @@
 class CoursesController < ApplicationController
-  def index
-  end
+	def index
+		@courses = Course.find(:all)
+ 	end
 
+ 	def coursepage
+		@courses = Course.find(params[:id])
+  	end
 end
