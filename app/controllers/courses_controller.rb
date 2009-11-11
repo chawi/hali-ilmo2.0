@@ -9,5 +9,6 @@ class CoursesController < ApplicationController
 
 	def create
 		Course.create(params[:course])	
+		redirect_to root_url
 	end
 end
