@@ -43,6 +43,9 @@ Rails::Initializer.run do |config|
 #  :default => '%d/%m/%Y %H:%M'
 #)
 
+end
+
+
 ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
 	:default => "%d.%m.%Y"
 )
@@ -50,8 +53,3 @@ ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
 	:default => "%d.%m.%Y %H:%M"
 )
-
-
-
-
-end
