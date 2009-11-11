@@ -3,7 +3,12 @@ class CoursesController < ApplicationController
 		@courses = Course.find(:all)
  	end
 
- 	def coursepage
+	def show
 		@courses = Course.find(params[:id])
-  	end
+ 	end
+
+	def create
+		#raise params[:course].inspect
+		Course.create(params[:course])	
+	end
 end

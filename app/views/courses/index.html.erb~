@@ -1,10 +1,15 @@
+<%= link_to "Lisää kurssi", :new_course %>
+
+<%#= link_to "Lisää kurssi", :controller => "courses", :action => "new" %>
+
+
+<p class="underline bold">Kurssilistaus</p>
+
 <ul>
 	<% @courses.each do |course| %>
 		<li>
 			<%= link_to course.name, course_path(course) %>
 		</li>
 	<% end %>
-
-	
 </ul>
 

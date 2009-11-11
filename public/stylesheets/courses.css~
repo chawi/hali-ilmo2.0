@@ -41,7 +41,10 @@ h2{
 
 .italic{
 	font-style: italic;
+}
 
+.bold{
+	font-weight: bold;
 }
 
 
