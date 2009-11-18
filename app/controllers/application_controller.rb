@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
 		if session[:current_user_id] 
 			true
 		else
+			flash[:warning] = "Ole hyvä ja kirjaudu"
+			flash.keep
 			redirect_to root_url
 			false
 		end
