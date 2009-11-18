@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	skip_before_filter :login_required, :only => [ :index, :show, :new, :create ]
+	skip_before_filter :login_required, :only => [ :new, :create ]
 
 	def index
 		@user = User.all

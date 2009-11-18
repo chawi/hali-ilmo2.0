@@ -19,10 +19,8 @@
   		<%= submit_tag "Päivitä" %>
 	<% end %>
 
-		<% #raise @user.inspect %>
 		<%= button_to "Poista tili", { :action => "destroy", :id => @user.id },
  :confirm => "Oletko varma?", :metho=> :delete %>
-
 
 	<% if flash[:error] %>
 		<div class="warning">
