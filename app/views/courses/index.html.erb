@@ -1,12 +1,17 @@
-<%= link_to "Lisää kurssi", :new_course %>
-
-<p class="underline bold">Kurssilistaus</p>
-
-<ul>
-	<% @courses.each do |course| %>
-		<li>
-			<%= link_to course.name, course_path(course) %>
-		</li>
+<br />
+<div>
+	<% if flash[:notice] %>
+		<div class="notice">
+			<%= flash[:notice] %>
+		</div>
 	<% end %>
-</ul>
-
+	<br />
+	<p class="underline bold">Kurssilistaus</p>
+	<ul>
+		<% @courses.each do |course| %>
+			<li>
+				<%= link_to course.name, course_path(course) %>
+			</li>
+		<% end %>
+	</ul>
+</div>

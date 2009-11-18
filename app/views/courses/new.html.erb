@@ -1,13 +1,10 @@
-<h2>Lisää kurssi</h2>
-
-<%= link_to 'Kurssilistaus', courses_path %>
+<br />
+<span class="bold">Lisää kurssi</span>
 
 <p>
-	<% #form_for :course, @course, :url => course_url(:action=>'create') do |f| %>
-
 	<% form_for :course, :url =>courses_path do |f| %>
 	
-	<ul>
+	<ul class="styledList">
     		<li><%= f.label :name, 'Kurssin nimi' %>
 			<%= f.text_field(:name) %></li>
     		<li><%= f.label :description, 'Kurssikuvaus' %>

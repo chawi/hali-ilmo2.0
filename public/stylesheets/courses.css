@@ -25,6 +25,35 @@ h2{
 	border: 1px grey solid;
 }
 
+
+.toolbar{
+	clear: both;
+	float: right;	
+	width: 100%;
+}
+
+.toolbar div:first-child{
+	float: left;
+}
+
+.toolbar div:last-child{
+	float: right;
+}
+
+.clear{
+	clear:both;
+}
+
+.left{
+	float: left;
+}
+
+/*.courses_wrap div{
+	clear: both;
+	float: left;
+	margin-top: 0.3em;
+}*/
+
 .footer{
 	clear: both;
 	text-align: right;
@@ -38,6 +67,43 @@ h2{
 	border: 1px grey solid;
 
 }
+
+.login{
+	clear: both;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+ul.styledList{
+	list-style: none;
+}
+
+ul.styledList li{
+	width: auto;
+}
+
+ul.styledList input{
+	width: 30%;
+	margin-left: 1em;
+}
+
+ul.styledList label{
+	width: 30%;
+
+}
+
+.warning, .error{
+	color: red;
+	/*border: 1px dotted red;*/
+	width: auto;
+}
+
+.notice{
+	color: green;
+	/*border: 1px dotted red;*/
+	width: auto;
+}
+
 
 .italic{
 	font-style: italic;
