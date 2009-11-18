@@ -44,6 +44,9 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :users
   map.resources :courses
   map.resources :sessions	
+	map.resources :course_instances
+
+	#admin namespace-lisäys
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

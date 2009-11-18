@@ -17,7 +17,7 @@
 				<div class="toolbar">
 					<% if @logged_user_id %>
 						<div>
-							Kirjauduttu sisään tunnuksella: <%= link_to @logged_username, edit_user_path(@logged_user_id) %>
+							Kirjauduttu sisään tunnuksella: <%= link_to @logged_username, user_path(@logged_user_id) %>
 						</div>
 					<% end %>
 					<div>

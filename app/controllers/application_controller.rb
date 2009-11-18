@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   before_filter :login_required
-  before_filter :set_user_variable
+	before_filter :set_user_variable
 
   def login_required
 		if session[:current_user_id] 
