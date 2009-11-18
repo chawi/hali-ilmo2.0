@@ -35,7 +35,8 @@ class UsersController < ApplicationController
 
 		if user.save 
 			flash[:notice] = 'Käyttäjä luotu'  
-			redirect_to new_user_path
+			flash.keep
+			redirect_to root_path
 		else  
 			render :action => "new" 
 		end 
