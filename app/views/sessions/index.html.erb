@@ -1,0 +1,33 @@
+<div>
+	<span class="bold">Kirjaudu sisään</span><br />
+
+	<% form_for :user, :url =>sessions_path do |f| %>
+	
+	<ul class="styledList">
+    		<li><%= f.label :username, 'Tunnus' %>
+			<%= f.text_field(:username) %></li>
+    		<li><%= f.label :psword, 'Salasana' %>
+			<%= f.password_field(:psword) %></li>
+  	</ul>
+  		<%= submit_tag "Kirjaudu" %>
+	<% end %>
+
+	<% if flash[:warning] %>
+		<div class="warning">
+			<%= flash[:warning] %>
+		</div>
+	<% end %>
+
+	
+
+
+</div>
+
+<!-- <div>
+	<p>Tekstiä</p>
+
+	<ul>
+		<li>Selaa kursseja kirjautumatta sisään</li>
+		<li>Ilmoittaudu kursseille sisäänkirjautumisen jälkeen</li>
+	</ul>
+</div>  -->

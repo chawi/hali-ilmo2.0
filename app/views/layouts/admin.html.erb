@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<%= stylesheet_link_tag "courses" %>
+	</head>
+
+	<body>
+
+		<div class="courses_wrap">
+
+			<h1>Adminin Parempi Ilmo 2.0</h1>
+
+			<hr />
+
+				<div class="toolbar">
+					<% if @logged_user_id %>
+						<div>
+							Kirjauduttu sisään tunnuksella: <%= link_to @logged_username, edit_user_path(@logged_user_id) %>
+						</div>
+					<% end %>
+					<div>
+						<%= link_to 'Selaa kursseja', courses_path %>
+	 
+						<% if @logged_user_id %>
+							 | <%= link_to "Lisää kurssi", new_course_path %> |
+							 <%= link_to "Kirjaudu ulos", logout_path %>
+						<% else %>
+							 | <%= link_to 'Kirjaudu sisään', root_url %>
+							| <%= link_to 'Rekisteröidy', new_user_path %>
+						<% end %>
+					</div>
+				</div>
+			
+			<%= yield %>
+		</div>
+
+		<div class="footer">
+			Sivu luotiin <%= Time.now.to_s(:default) %>
+
+			
+
+		</div>
+	</body>
+
+</html>

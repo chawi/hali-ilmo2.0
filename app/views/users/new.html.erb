@@ -1,0 +1,30 @@
+
+<div>
+	<span class="bold">Rekisteröidy</span><br />
+
+	<% form_for :user, :url =>users_path do |f| %>
+	
+	<ul class="styledList">
+      <li><%= f.label :username, 'Tunnus' %>
+			<%= f.text_field(:username) %></li>
+    		<li><%= f.label :psword, 'Salasana' %>
+			<%= f.password_field(:psword) %></li>
+    		<li><%= f.label :psword_confirmation, 'Salasana uudelleen' %>
+			<%= f.password_field(:psword_confirmation) %></li>
+  	</ul>
+  		<%= submit_tag "Rekisteröidy" %>
+	<% end %>
+
+	<% if flash[:error] %>
+		<div class="warning">
+			<%= flash[:error] %>
+		</div>
+	<% end %>
+
+<% if flash[:notice] %>
+		<div class="notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+
+</div>

@@ -1,0 +1,39 @@
+<br /><br />
+<div>
+	<span class="bold">Muokkaa tietojasi</span><br />
+
+	<% form_for :user, :url => "/users/edit" do |f| %>
+	
+	<ul class="styledList">
+    		<li><%= f.label :username, 'Tunnus' %>
+			<%= f.text_field(:username) %></li>
+    		<li><%= f.label :psword, 'Salasana' %>
+			<%= f.password_field(:psword) %></li>
+    		<li><%= f.label :psword_confirmation, 'Salasana uudestaan' %>
+			<%= f.password_field(:psword_confirmation) %></li>
+    	<li><%= f.label :realName, 'Nimi' %>
+			<%= f.text_field(:realName) %></li>
+			<li><%= f.label :studentId, 'Opiskelijanumero' %>
+			<%= f.text_field(:studentId) %></li>
+  	</ul>
+  		<%= submit_tag "Päivitä" %>
+	<% end %>
+
+		<% #raise @user.inspect %>
+		<%= button_to "Poista tili", { :action => "destroy", :id => @user.id },
+ :confirm => "Oletko varma?", :metho=> :delete %>
+
+
+	<% if flash[:error] %>
+		<div class="warning">
+			<%= flash[:error] %>
+		</div>
+	<% end %>
+
+	<% if flash[:notice] %>
+		<div class="notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+
+</div>
