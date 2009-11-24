@@ -1,10 +1,20 @@
 
-
-<h2><%= @courses.name %></h2>
+<br />
+<h2 class="underline"><%= @course.name %></h2>
 
 <p>
 	<span class="bold">Kurssin kuvaus: </span><br />
-	<%= @courses.description %>
+	<%= @course.description %>
 </p>
 
+<p>
+	Kurssin luennointikerrat: <br />
+
+	<% #raise @course.course_instances.inspect %>
+
+	<% @ci.each do |cin| %>
+		<%= link_to cin.instance_name, course_instance_path(cin) %><br />
+	<% end %>
+
+</p>
 

@@ -3,12 +3,12 @@ class CoursesController < ApplicationController
 	skip_before_filter :login_required, :only => [ :index, :show ]
 
 	def index	
-		@courses = Course.find(:all)
-		
+		@courses = Course.ascending.find(:all)
  	end 
 
 	def show
-		@courses = Course.find(params[:id])
+		@course = Course.find(params[:id])
+		@ci = @course.course_instances
  	end
 
 	def new
