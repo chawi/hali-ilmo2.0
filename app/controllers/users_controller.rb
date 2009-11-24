@@ -7,7 +7,14 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+			#make general
+		if @logged_user_id == params[:id]
+			@user = User.find(params[:id])
+		else
+			flash[:warning] = "Ai pyrit kielletylle sivulle."
+			flash.keep
+			redirect_to courses_path
+		end
 	end
 
 	def new
@@ -46,16 +53,11 @@ class UsersController < ApplicationController
 	def edit
 		#ugly
 		user = User.find(@logged_user_id)		
-		#user.update(params[:user])
-
-		#raise user.inspect		
-
-
-		if user.save
+		if user.update_attributes(params[:user])
 			flash[:notice] = "Tiedot päivitetty"			
 		end	
-			redirect_to user_path(:id=>@logged_user_id)
 
+			redirect_to user_path(:id=>@logged_user_id)
 	end
 	
 	def destroy

@@ -5,6 +5,13 @@
 			<%= flash[:notice] %>
 		</div>
 	<% end %>
+
+	<% if flash[:warning] %>
+		<div class="warning">
+			<%= flash[:warning] %>
+		</div>
+	<% end %>
+
 	<br />
 	<p class="underline bold">Kurssilistaus</p>
 	<ul>

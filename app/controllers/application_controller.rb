@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 	before_filter :set_user_variable
 
   def login_required
-		if session[:current_user_id] 
+		if session[:current_user_id]
 			true
 		else
 			flash[:warning] = "Ole hyvä ja kirjaudu"
@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
 
   def set_user_variable
 		if session[:current_user_id]
-			#raise session.inspect
 			@logged_user_id = session[:current_user_id]
 			#could be prettier
 			@logged_username = User.find(@logged_user_id).username
