@@ -20,7 +20,7 @@
 	<% end %>
 
 		<%= button_to "Poista tili", { :action => "destroy", :id => @user.id },
- :confirm => "Oletko varma?", :metho=> :delete %>
+ :confirm => "Oletko varma?", :method => :delete %>
 
 	<% if flash[:error] %>
 		<div class="warning">

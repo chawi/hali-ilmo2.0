@@ -13,7 +13,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 
 	<% @ci.exercise_groups.each do |ex| %>
 		<%= radio_button_tag(:groups, ex.id) %>  
-		<%= label_tag(:groups, ex.group_time) %><br />
+		<%= label_tag(:groups, ex.name) %><br />
 	<% end %>
 	<br />
 	<%= submit_tag "Ilmottaudu" %> 

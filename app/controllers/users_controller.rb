@@ -3,18 +3,18 @@ class UsersController < ApplicationController
 	skip_before_filter :login_required, :only => [ :new, :create ]
 
 	def index
-		@user = User.all
+		@user = User.users_descending
 	end
 
 	def show
 			#make general
-		if @logged_user_id == params[:id]
+		#if @logged_user_id == params[:id]
 			@user = User.find(params[:id])
-		else
-			flash[:warning] = "Ai pyrit kielletylle sivulle."
-			flash.keep
-			redirect_to courses_path
-		end
+		#else
+		#	flash[:warning] = "Ai pyrit kielletylle sivulle."
+		#	flash.keep
+		#	redirect_to courses_path
+		#end
 	end
 
 	def new
@@ -52,7 +52,8 @@ class UsersController < ApplicationController
 
 	def edit
 		#ugly
-		user = User.find(@logged_user_id)		
+		user = User.find(@logged_user_id)	
+		#raise params.inspect	
 		if user.update_attributes(params[:user])
 			flash[:notice] = "Tiedot päivitetty"			
 		end	

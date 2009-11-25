@@ -3,12 +3,12 @@ class CoursesController < ApplicationController
 	skip_before_filter :login_required, :only => [ :index, :show ]
 
 	def index	
-		@courses = Course.ascending.find(:all)
+		@courses = Course.courses_ascending
  	end 
 
 	def show
 		@course = Course.find(params[:id])
-		@ci = @course.course_instances
+		#@ci = @course.course_instances
  	end
 
 	def new
@@ -30,4 +30,11 @@ class CoursesController < ApplicationController
 	def update
 		#Course.update__(params[:course])
 	end
+
+	def destroy
+		#raise params.inspect
+		#Course.destroy(params[:id])
+		redirect_to courses_path
+	end
+
 end

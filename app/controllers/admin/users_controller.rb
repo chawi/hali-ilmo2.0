@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
 
-	#active_scaffold :users
+	active_scaffold :users
 
 end

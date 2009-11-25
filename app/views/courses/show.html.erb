@@ -1,6 +1,9 @@
 
 <br />
-<h2 class="underline"><%= @course.name %></h2>
+<h2 class="underline"><%= @course.name %></h2> 
+
+(<%= link_to "Muokkaa", courses_path %> | 
+<%= link_to "Poista", delete_course_path %>)
 
 <p>
 	<span class="bold">Kurssin kuvaus: </span><br />
@@ -12,8 +15,11 @@
 
 	<% #raise @course.course_instances.inspect %>
 
-	<% @ci.each do |cin| %>
-		<%= link_to cin.instance_name, course_instance_path(cin) %><br />
+	<% @course.course_instances.each do |cin| %>
+		<%= link_to cin.instance_name, course_instance_path(cin) %> 
+(<%= link_to "Muokkaa", delete_course_instance_path %> | 
+<%= link_to "Poista", delete_course_instance_path %>)
+<br />
 	<% end %>
 
 </p>

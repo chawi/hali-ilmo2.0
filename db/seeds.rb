@@ -15,7 +15,9 @@
 		    ["XML","Kiva oli kesäkurssina tämä"]]
 
 	if ENV['del']
-		Course.delete_all
+		Course.destroy_all
+		CourseInstance.destroy_all
+		ExerciseGroup.destroy_all
 		puts "db reset \n"
 	end
 
@@ -23,7 +25,25 @@
 		
 		c = rand(courseAr.length)
 		#puts "#{c} random \n"
-		Course.create(:name => courseAr[c][0], :description => courseAr[c][1])	
+		c =	Course.create(:name => courseAr[c][0], :description => courseAr[c][1])	
+		d = CourseInstance.create(:instance_name=>"Kevät 2008", :course_id=>c.id)
+
+		ExerciseGroup.create(:name=>"Mon 12-14 B121", :course_instance_id=>d.id)
+		ExerciseGroup.create(:name=>"Tue 12-14 C121", :course_instance_id=>d.id)
+		ExerciseGroup.create(:name=>"Tue 16-18 B122", :course_instance_id=>d.id)			
+
+		e = CourseInstance.create(:instance_name=>"Syksy 2009", :course_id=>c.id)		
+
+		ExerciseGroup.create(:name=>"Mon 12-14 B121", :course_instance_id=>e.id)
+		ExerciseGroup.create(:name=>"Tue 12-14 C121", :course_instance_id=>e.id)
+		ExerciseGroup.create(:name=>"Tue 16-18 B122", :course_instance_id=>e.id)			
+
+		f = CourseInstance.create(:instance_name=>"Kevät 2009", :course_id=>c.id)		
+
+		ExerciseGroup.create(:name=>"Mon 12-14 B121", :course_instance_id=>f.id)
+		ExerciseGroup.create(:name=>"Tue 12-14 C121", :course_instance_id=>f.id)
+		ExerciseGroup.create(:name=>"Tue 16-18 B122", :course_instance_id=>f.id)			
+		
 	end			
 
 	puts "#{ENV['kursseja']} courses added"

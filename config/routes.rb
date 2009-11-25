@@ -39,6 +39,8 @@ ActionController::Routing::Routes.draw do |map|
 
 	map.logout "/sessions/logout", :controller => "sessions", :action => "destroy"
 	map.delete_user "/users/delete", :controller => "users", :action => "destroy"
+	map.delete_course "/courses/delete", :controller => "courses", :action => "destroy"
+	map.delete_course_instance "/course_instances/delete", :controller => "course_instances", :action => "destroy"
 
 
 	map.resources :users
@@ -47,6 +49,10 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :course_instances
 
 	#admin namespace-lisäys
+	map.namespace(:admin) do |admin|
+		admin.resources :users
+		admin.resources :courses
+	end
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

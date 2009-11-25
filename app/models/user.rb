@@ -2,6 +2,19 @@ class User < ActiveRecord::Base
 
 	attr_accessor :psword_confirmation
 
+	named_scope :users_ascending, :order => "username ASC"
+	named_scope :users_descending, :order => "username DESC"
+
+  validates_length_of :username, :in => 3..15
+  validates_length_of :name, :in => 3..50, :allow_blank => true
+  
+  validates_length_of :password, :in => 5..30, :allow_blank => true, :on => :update
+  validates_length_of :password, :in => 5..30, :on => :create
+  validates_confirmation_of :password
+  
+  validates_length_of :student_number, :is => 9, :allow_blank => true
+
+
 	#user-luokan luokkametodi, sama kuin def User.authenticate
 
 	def self.authenticate(username, psword)
@@ -23,11 +36,6 @@ class User < ActiveRecord::Base
 
 end
 
-
-#unless session[:user]
- #     redirect_to :controller => "login" 
-  #    return false
-  #  end
 
 
 
