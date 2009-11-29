@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 
 	attr_accessor :psword_confirmation
 
+	has_many :registrations
+	has_many :exercise_groups, :through => :registrations
+
 	named_scope :users_ascending, :order => "username ASC"
 	named_scope :users_descending, :order => "username DESC"
 

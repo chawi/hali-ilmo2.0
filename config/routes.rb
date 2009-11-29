@@ -41,17 +41,30 @@ ActionController::Routing::Routes.draw do |map|
 	map.delete_user "/users/delete", :controller => "users", :action => "destroy"
 	map.delete_course "/courses/delete", :controller => "courses", :action => "destroy"
 	map.delete_course_instance "/course_instances/delete", :controller => "course_instances", :action => "destroy"
+	map.builder "builder/index", :controller => "builder", :action => "index"
+
 
 
 	map.resources :users
   map.resources :courses
   map.resources :sessions	
 	map.resources :course_instances
+	map.resources :registrations
+
+	#nested routes
+	map.resources :course do |course|
+		course.resources :course_instances do |course_instance|
+			course_instance.resources :exercise_groups
+		end
+	end
 
 	#admin namespace-lisäys
 	map.namespace(:admin) do |admin|
-		admin.resources :users
-		admin.resources :courses
+		admin.resources :users, :active_scaffold => true
+		admin.resources :courses, :active_scaffold => true
+		admin.resources :course_instances, :active_scaffold => true
+		admin.resources :exercise_groups, :active_scaffold => true
+		admin.resource :mailer, :controller => "mailer"
 	end
 
   map.connect ':controller/:action/:id'

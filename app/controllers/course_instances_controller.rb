@@ -10,7 +10,7 @@ class CourseInstancesController < ApplicationController
 
 	def destroy
 		#raise params.inspect
-		#CourseInstance.destroy(params[:id])
+		CourseInstance.destroy(params[:id])
 		redirect_to courses_path
 	end
 

@@ -1,47 +1,60 @@
 <html>
 	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<title>LoL-Ilmo 2.0</title>
+
 		<%= stylesheet_link_tag "courses" %>
 	</head>
 
 	<body>
 
-		<div class="courses_wrap">
+		
 
-			<h1>LoL-Ilmo 2.0</h1>
 
-			<hr />
+		<div class="wrapper">
+
+			<div class="header">
+      	<%= link_to image_tag("rss_feed_icon.png", :border=>0), builder_path %> RSS
+			</div>
+
+			<div class="content">
+
+				<h1>LoL-Ilmo 2.0</h1>
+
+				<hr />
 				
 
 				
 
-				<div class="toolbar">
-					<% if @logged_user_id %>
-						<div>
-							Kirjauduttu sisään tunnuksella: <%= link_to @logged_username, user_path(@logged_user_id) %>
-						</div>
-					<% end %>
-					<div>
-						<%= link_to 'Selaa kursseja', courses_path %>
-	 
+					<div class="toolbar">
 						<% if @logged_user_id %>
-							 | <%= link_to "Lisää kurssi", new_course_path %> |
-							 <%= link_to "Kirjaudu ulos", logout_path %>
-						<% else %>
-							 | <%= link_to 'Kirjaudu sisään', root_url %>
-							| <%= link_to 'Rekisteröidy', new_user_path %>
+							<div>
+								Kirjauduttu sisään tunnuksella: <%= link_to @logged_username, user_path(@logged_user_id) %>
+							</div>
 						<% end %>
+						<div>
+							<%= link_to 'Selaa kursseja', courses_path %>
+		 
+							<% if @logged_user_id %>
+								 | <%= link_to "Lisää kurssi", new_course_path %> |
+								 <%= link_to "Kirjaudu ulos", logout_path %>
+							<% else %>
+								 | <%= link_to 'Kirjaudu sisään', root_url %>
+								| <%= link_to 'Rekisteröidy', new_user_path %>
+							<% end %>
+						</div>
 					</div>
-				</div>
 			
-			<%= yield %>
+				<%= yield %>
+			</div>
+
+			<div class="footer">
+				Sivu luotiin <%= Time.now.to_s(:default) %>
+			</div>	
+
 		</div>
 
-		<div class="footer">
-			Sivu luotiin <%= Time.now.to_s(:default) %>
 
-			
-
-		</div>
 	</body>
 
 </html>

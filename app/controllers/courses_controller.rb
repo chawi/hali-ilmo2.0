@@ -8,7 +8,6 @@ class CoursesController < ApplicationController
 
 	def show
 		@course = Course.find(params[:id])
-		#@ci = @course.course_instances
  	end
 
 	def new
