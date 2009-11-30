@@ -64,7 +64,7 @@ ActionController::Routing::Routes.draw do |map|
 		admin.resources :courses, :active_scaffold => true
 		admin.resources :course_instances, :active_scaffold => true
 		admin.resources :exercise_groups, :active_scaffold => true
-		admin.resource :mailer, :controller => "mailer"
+		admin.resource :mailer, :controller => "mailer" #overwrite
 	end
 
   map.connect ':controller/:action/:id'

@@ -14,6 +14,10 @@ h2{
 	text-size: 14px;
 }
 
+.small{
+	text-size: 9px;
+}
+
 .wrapper{
 	clear: both;
 	text-align: left;
@@ -93,22 +97,35 @@ h2{
 	background-color: #FFFFFF;
 }
 
+ul.newsfeed{
+	list-style: none;
+	border: 1px #COCOCO solid;
+}
+
 ul.styledList{
+	margin-left: 2em;
 	list-style: none;
 }
 
 ul.styledList li{
+	clear: both;
+	width: 70%;
+	margin-top: 0.3em;
+}
+
+ul.styledList input, textarea{
+	width: 60%;
+	float: right;
+}
+
+ul.styledList input[type="submit"]{
 	width: auto;
+	float: right;
 }
 
-ul.styledList input{
-	width: 30%;
-	margin-left: 1em;
-}
-
-ul.styledList label{
-	width: 30%;
-
+ul.styledList li label{
+	width: 35%;
+	float: left;
 }
 
 .warning, .error{

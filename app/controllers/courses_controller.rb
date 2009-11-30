@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
 
 	def index	
 		@courses = Course.courses_ascending
+		@newsfeed = Newsfeed.all
  	end 
 
 	def show
@@ -19,7 +20,7 @@ class CoursesController < ApplicationController
 
 		 if @course.save 
 			flash[:notice] = 'Kurssi luotu'  
-			redirect_to root_url
+			redirect_to courses_path
 		else  
 			render :action => "new" 
 		end 

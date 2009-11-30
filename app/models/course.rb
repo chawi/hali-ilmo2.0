@@ -5,4 +5,12 @@ class Course < ActiveRecord::Base
 	named_scope :courses_ascending, :order => "name ASC"
 	named_scope :courses_descending, :order => "name DESC"
 
+	after_create :update_newsfeed
+
+	private
+	
+	def update_newsfeed
+		Newsfeed.course_added(self)
+	end
+
 end

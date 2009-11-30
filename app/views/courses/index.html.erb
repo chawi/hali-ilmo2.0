@@ -13,7 +13,18 @@
 	<% end %>
 
 	<br />
-	<p class="underline bold">Kurssilistaus</p>
+	<span class="underline bold">Newsfeedi</span><br />
+	<ul class="newsfeed">
+		<% @newsfeed.each do |items| %>
+			<li>
+				 - <%= items.message %><br />
+					<span class="small"><%= time_ago_in_words(items.created_at) %> ago </span>
+			</li>
+		<% end %>
+	</ul>
+
+	<br />
+	<span class="underline bold">Kurssilistaus</span><br />
 	<ul>
 		<% @courses.each do |course| %>
 			<li>

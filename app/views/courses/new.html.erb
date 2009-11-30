@@ -6,10 +6,15 @@
 	
 	<ul class="styledList">
     		<li><%= f.label :name, 'Kurssin nimi' %>
-			<%= f.text_field(:name) %></li>
+					<%= f.text_field(:name) %>
+				</li>
     		<li><%= f.label :description, 'Kurssikuvaus' %>
-			<%= f.text_field(:description) %></li>
+					<%= f.text_field(:description) %>
+				</li>
+				<li>
+					<%= submit_tag "Save" %>
+				</li>
   	</ul>
-  		<%= submit_tag "Save" %>
+  		
 	<% end %>	
 </p>

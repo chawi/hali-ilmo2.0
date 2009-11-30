@@ -1,3 +1,27 @@
-<h2>Lähetä sähköpostia</h2>
+<br /><br />
+<span class="bold underline">Lähetä sähköpostia</span><br />
 
+<% form_tag do %>
 
+	<ul class="styledList">
+    		<li><%= label :recipient, 'Vastaanottaja' %>
+					<%= text_field_tag(:recipient) %>
+				</li>
+    		<li><%= label :subject, 'Otsikko' %>
+					<%= text_field_tag(:subject) %>
+				</li>
+				<li><%= label :message, 'Viesti' %>
+					<%= text_area_tag :message, "", :rows=>10 %>
+				</li>
+				<li>
+					<%= submit_tag "Lähetä" %>	
+				</li>
+  </ul>
+ 
+		<% if flash[:notice] %>
+		<div class="notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+
+<% end %>
