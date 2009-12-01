@@ -36,6 +36,7 @@
 							<%= link_to 'Selaa kursseja', courses_path %>
 		 
 							<% if @logged_user_id %>
+								 | <%= link_to "Ilmoittautumiseni", courses_path %> |
 								 | <%= link_to "Lisää kurssi", new_course_path %> |
 								 <%= link_to "Kirjaudu ulos", logout_path %>
 							<% else %>

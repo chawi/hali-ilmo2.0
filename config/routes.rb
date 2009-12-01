@@ -54,7 +54,9 @@ ActionController::Routing::Routes.draw do |map|
 	#nested routes
 	map.resources :course do |course|
 		course.resources :course_instances do |course_instance|
-			course_instance.resources :exercise_groups
+			course_instance.resources :exercise_groups do |exercise_group|
+				exercise_group.resources :registrations		#??	
+			end
 		end
 	end
 

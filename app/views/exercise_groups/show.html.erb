@@ -1,0 +1,16 @@
+
+<br />
+<span class="bold underline"><%= @eg.name %></span>
+
+<p>Laskuharjoitukset pitää Helmi Kakkonen.
+</p>
+
+<p>
+	<span class="bold">Ilmoittautuneet</span><br /><br />
+	<ul>
+		<% @eg.users.each do |users| %>
+			<li><%= user.username %></li>  
+		<% end %>
+	</ul>
+</p>
+

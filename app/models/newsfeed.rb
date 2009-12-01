@@ -8,4 +8,8 @@ class Newsfeed < ActiveRecord::Base
 		create :message => "Uusi kurssi #{course.name} lisätty järjestelmään."
 	end
 	
+	def self.into_exercise_group(user, exgroup)
+		create :message => "#{user.username} liittyi ryhmään #{exgroup.name}"
+	end
+
 end

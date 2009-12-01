@@ -6,6 +6,7 @@ class CourseInstancesController < ApplicationController
 
 	def show
 		@ci = CourseInstance.find(params[:id])
+		#raise @ci.inspect
 	end
 
 	def destroy

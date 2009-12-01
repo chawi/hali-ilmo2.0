@@ -11,13 +11,15 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 <p>
 	<span class="bold">Harjoitusryhmät</span><br /><br />
 
-	<% form_for :exercise_groups, :url => "" do |f| %>
+	<% #raise new_registration_path.inspect %>
+
+	<% form_for :exercise_group, :url=> registrations_path do |f| %>
 	<% @ci.exercise_groups.each do |ex| %>
-		<%= radio_button_tag(:groups, ex.id) %>  
-		<%= label_tag(:groups, ex.name) %><br />
+		<%= f.radio_button :groups, ex.id %>  
+		<%= f.label :groups, ex.name %><br />
 	<% end %>
 	<br />
-	<%= submit_tag "Ilmottaudu" %> 
+	<%= submit_tag "Ilmoittaudu" %> 
 	<% end %>
 
 </p>

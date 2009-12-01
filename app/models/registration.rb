@@ -3,10 +3,13 @@ class Registration < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :exercise_group
 
-	def create
-		
+	after_create :update_newsfeed
 
-		redirect_to courses_url
-	end	
+	private
+	
+	def update_newsfeed #into_exercise_group(user, exgroup)
+		#raise params.inspect
+		Newsfeed.into_exercise_group(user, eg)
+	end
 
 end

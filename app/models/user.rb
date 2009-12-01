@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
 	named_scope :users_descending, :order => "username DESC"
 	named_scope :with_email, :conditions => "email IS NOT NULL"
 	
-
   validates_length_of :username, :in => 3..15
   validates_length_of :realName, :in => 3..50, :allow_blank => true
   
