@@ -16,7 +16,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 	<% form_for :exercise_group, :url=> registrations_path do |f| %>
 	<% @ci.exercise_groups.each do |ex| %>
 		<%= f.radio_button :groups, ex.id %>  
-		<%= f.label :groups, ex.name %><br />
+		<%= link_to ex.name, exercise_group_path(ex) %><br />
 	<% end %>
 	<br />
 	<%= submit_tag "Ilmoittaudu" %> 

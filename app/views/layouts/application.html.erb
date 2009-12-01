@@ -14,7 +14,9 @@
 		<div class="wrapper">
 
 			<div class="header">
-      	<%= link_to image_tag("rss_feed_icon.png", :border=>0), builder_path %> RSS
+      	<!-- <%= link_to image_tag("rss_feed_icon.png", :border=>0), builder_path %> RSS (Courses) -->
+				<%= link_to image_tag("rss_feed_icon.png", :border=>0), builder_path %> 
+				<%= link_to "RSS (Newsfeed)", builder_path %>
 			</div>
 
 			<div class="content">
@@ -29,14 +31,14 @@
 					<div class="toolbar">
 						<% if @logged_user_id %>
 							<div>
-								Kirjauduttu sisään tunnuksella: <%= link_to @logged_username, user_path(@logged_user_id) %>
+								Hei <%= link_to @logged_username, user_path(@logged_user_id) %>!
 							</div>
 						<% end %>
 						<div>
 							<%= link_to 'Selaa kursseja', courses_path %>
 		 
 							<% if @logged_user_id %>
-								 | <%= link_to "Ilmoittautumiseni", courses_path %> |
+								 | <%= link_to "Ilmoittautumiseni", registration_path(@logged_user_id) %>
 								 | <%= link_to "Lisää kurssi", new_course_path %> |
 								 <%= link_to "Kirjaudu ulos", logout_path %>
 							<% else %>

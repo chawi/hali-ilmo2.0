@@ -1,5 +1,7 @@
 class Newsfeed < ActiveRecord::Base
 
+	named_scope :newsfeed_descending, :order => "created_at DESC"
+
 	def self.user_registered(user)
 		create :message => "#{user.username} rekisteröytyi käyttäjäksi."
 	end
@@ -9,7 +11,7 @@ class Newsfeed < ActiveRecord::Base
 	end
 	
 	def self.into_exercise_group(user, exgroup)
-		create :message => "#{user.username} liittyi ryhmään #{exgroup.name}"
+		create :message => "#{user.username} liittyi kurssille #{exgroup.course_instance.course} ryhmään #{exgroup.name}"
 	end
 
 end

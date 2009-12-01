@@ -1,0 +1,16 @@
+<br />
+<div>
+	<br />
+	<span class="underline bold">Ilmoittautumiseni</span><br />
+
+	<ul>
+		<% @user_registrations.each do |reg| %>
+			<li><%= reg.course_instance.course.name %> - <%= reg.name %> 
+				(<%= link_to "Vaihda ryhmää", course_instance_path(reg.course_instance) %> | 
+				<%= link_to "Poista", courses_path %>)
+
+			</li>
+		<% end %>
+	</ul>
+	
+</div>

@@ -100,6 +100,14 @@ h2{
 ul.newsfeed{
 	list-style: none;
 	border: 1px #COCOCO solid;
+	margin-left: 3em;
+}
+
+ul.newsfeed li{
+	border-bottom: 1px #000000 solid;
+	width: 30em;
+	padding: 0.2em;
+	margin-top: 0.4em;
 }
 
 ul.styledList{

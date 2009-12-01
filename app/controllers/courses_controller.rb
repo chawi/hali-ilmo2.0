@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
 
 	def index	
 		@courses = Course.courses_ascending
-		@newsfeed = Newsfeed.all
+		@newsfeed = Newsfeed.newsfeed_descending
  	end 
 
 	def show

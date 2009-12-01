@@ -1,8 +1,11 @@
 class RegistrationsController < ApplicationController
 
+	def show
+		@user_registrations = User.find(params[:id]).exercise_groups		
+
+	end
+
 	def create
-		#raise params.inspect
-		#"exercise_group"=>{"groups"=>"170"}
 		#if user already is in some group, remove this and add him again.
 
 		user = User.find(session[:current_user_id])
@@ -15,6 +18,7 @@ class RegistrationsController < ApplicationController
 			flash[:notice] = 'Sinut on lisätty kurssille #{course.name} ryhmään #{eg.name}'  
 			flash.keep
 			
+			Registration.update_newsfeed(user, eg)
 			redirect_to courses_path
 		else  
 			

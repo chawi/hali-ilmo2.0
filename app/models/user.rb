@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
 		Newsfeed.user_registered(self)
 	end
 
-
 	#user-luokan luokkametodi, sama kuin def User.authenticate
 
 	def self.authenticate(username, psword)
